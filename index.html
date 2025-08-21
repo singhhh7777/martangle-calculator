@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Binary Trading — Recovery (Martingale) Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Binary Trading — Martingale Calculator</h1>
+
+    <div class="card">
+        <div class="row">
+            <div>
+                <label>Total Capital</label>
+                <input id="totalCapital" type="number" min="0" step="0.01" value="10000">
+            </div>
+            <div>
+                <label>Starting Amount (Trade 1)</label>
+                <input id="startAmount" type="number" min="0" step="0.01" value="70">
+            </div>
+            <div>
+                <label>Desired Profit (per win)</label>
+                <input id="desiredProfit" type="number" min="0" step="0.01" value="0">
+            </div>
+            <div>
+                <label>Win Payout (%)</label>
+                <input id="payoutPercent" type="number" min="1" max="99" step="0.1" value="93">
+            </div>
+            <div>
+                <label>Max Trades</label>
+                <input id="maxTrades" type="number" min="1" step="1" value="10">
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="buildTable">Build / Rebuild Table</button>
+            <button id="simulateLossChain" class="gray">Simulate Worst Loss Chain</button>
+            <button id="resetAll" class="gray">Reset Results</button>
+            <button id="exportCSV" class="gray">Export CSV</button>
+            <button id="resetStats" class="gray">Reset Today's Stats</button>
+            <button id="themeToggle" class="gray">🌙 Dark Mode</button>
+            <div style="margin-left:auto" class="muted">Tip: edit per-row profit, click Win/Loss to simulate. Stats
+                saved locally.</div>
+        </div>
+    </div>
+
+    <div class="card summary" id="summaryCard">
+        <div class="stat">Trades done: <span id="tradesDone">0</span></div>
+        <div class="stat">Wins: <span id="winsCount">0</span></div>
+        <div class="stat">Losses: <span id="lossesCount">0</span></div>
+        <div class="stat">Current Capital: <span id="currentCapital">0</span></div>
+        <div class="stat">Max Stake Attempted: <span id="maxStake">0</span></div>
+    </div>
+
+    <div class="card">
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+            <div class="muted">Today's totals (saved locally):</div>
+            <div class="stat">Total Profit: <span id="todayProfit" class="today-good">0</span></div>
+            <div class="stat">Total Loss: <span id="todayLoss" class="today-bad">0</span></div>
+            <div class="stat">Net: <span id="todayNet">0</span></div>
+        </div>
+    </div>
+
+    <div id="tableWrap" class="card">
+        <div class="muted">No table yet. Click "Build / Rebuild Table".</div>
+    </div>
+
+    <script src="func.js"></script>
+</body>
+
+</html>

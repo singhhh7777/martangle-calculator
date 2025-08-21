@@ -1,0 +1,175 @@
+ :root {
+     --bg: #f6f8fb;
+     --card: #fff;
+     --accent: #0b69ff;
+     --muted: #6b7280;
+     --danger: #ff6b6b;
+     --good: #16a34a
+ }
+
+ body {
+     font-family: Inter, system-ui, Segoe UI, Arial;
+     padding: 18px;
+     background: var(--bg);
+     color: #0f172a
+ }
+
+ .card {
+     background: var(--card);
+     padding: 14px;
+     border-radius: 10px;
+     box-shadow: 0 6px 18px rgba(12, 20, 50, 0.06);
+     margin-bottom: 12px
+ }
+
+ h1 {
+     font-size: 20px;
+     margin: 0 0 8px
+ }
+
+ label {
+     display: block;
+     font-size: 13px;
+     margin: 6px 0 4px
+ }
+
+ input[type=number] {
+     width: 140px;
+     padding: 8px;
+     border-radius: 6px;
+     border: 1px solid #d7dee9
+ }
+
+ .row {
+     display: flex;
+     gap: 12px;
+     align-items: center;
+     flex-wrap: wrap
+ }
+
+ button {
+     padding: 8px 12px;
+     border-radius: 8px;
+     border: 0;
+     background: var(--accent);
+     color: white;
+     cursor: pointer
+ }
+
+ button.gray {
+     background: #e6eefc;
+     color: var(--accent)
+ }
+
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 12px
+ }
+
+ th,
+ td {
+     padding: 8px 6px;
+     border-bottom: 1px solid #7acaff;
+     text-align: center;
+     font-size: 13px
+ }
+
+ th {
+     color: #0b1220;
+     background: #c8f3f6;
+ }
+
+
+ input.small {
+     width: 90px;
+     padding: 6px;
+     border-radius: 6px;
+     border: 1px solid #e2e8f0
+ }
+
+ .win {
+     background: #e6ffef;
+     color: var(--good);
+     padding: 4px 6px;
+     border-radius: 6px
+ }
+
+ .loss {
+     background: #ffecec;
+     color: var(--danger);
+     padding: 4px 6px;
+     border-radius: 6px
+ }
+
+ .overcap {
+     background: #fff1f1;
+     color: var(--danger);
+     font-weight: 700
+ }
+
+ .muted {
+     color: var(--muted);
+     font-size: 13px
+ }
+
+ .controls {
+     display: flex;
+     gap: 8px;
+     margin-top: 10px;
+     flex-wrap: wrap
+ }
+
+ .summary {
+     display: flex;
+     gap: 12px;
+     align-items: center;
+     flex-wrap: wrap
+ }
+
+ .stat {
+     background: #fbfdff;
+     padding: 8px 10px;
+     border-radius: 8px;
+     font-size: 13px
+ }
+
+ .today-good {
+     color: var(--good);
+     font-weight: 700
+ }
+
+ .today-bad {
+     color: var(--danger);
+     font-weight: 700
+ }
+
+ @media (max-width:720px) {
+     input[type=number] {
+         width: 100%
+     }
+ }
+
+ /* Dark theme */
+ body.dark {
+     --bg: #0b1220;
+     --card: #222f4f;
+     --accent: #38bdf8;
+     --muted: #9aa4b2;
+     --danger: #f87171;
+     --good: #4ade80;
+     color: #e8eef6;
+ }
+
+ body.dark h1 {
+     color: #f8fafc;
+ }
+
+ body.dark .stat {
+     background: #111827;
+ }
+
+ body.dark button.gray {
+     background: #0f172a;
+     color: #38bdf8;
+ }
